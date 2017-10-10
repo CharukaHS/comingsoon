@@ -1,0 +1,27 @@
+* {
+  margin: 0; }
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: #84D1D5;
+  background-image: url(../img/background.png);
+  position: relative; }
+
+.header {
+  position: relative;
+  top: 12vh; }
+  .header h1, .header p {
+    color: white;
+    text-align: center; }
+
+.image .biplane {
+  position: relative;
+  top: 25vh;
+  display: block;
+  margin: auto;
+  z-index: 1; }
+
+.image .cloud1 {
+  opacity: 0.5;
+  position: relative; }
