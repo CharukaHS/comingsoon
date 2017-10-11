@@ -16,6 +16,7 @@
 .header {
   position: relative;
   top: 12vh;
+  width: 100%;
   h1, p{
     color: white;
     text-align: center;
@@ -75,6 +76,12 @@
   .cloud2, .cloud3, .cloud4 {
     @include ani(cloudFront, 10s, ease-in, 0s, infinite, normal, both);
   }
+}
+
+.foot {
+  position: relative;
+  bottom: 0;
+
 }
 
 //KEYFRAMES
