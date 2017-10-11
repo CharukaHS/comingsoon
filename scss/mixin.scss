@@ -1,0 +1,3 @@
+@mixin ani($name, $duration,  $timingF, $delay, $count, $direction, $fill) {
+  animation: $name $duration $timingF $delay $count $direction $fill
+}

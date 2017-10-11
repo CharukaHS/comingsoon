@@ -1,4 +1,5 @@
 @import "variable.scss";
+@import "mixin.scss";
 
 *{
   margin: 0;
@@ -22,15 +23,64 @@
 }
 
 .image {
-  .biplane {
+  position: absolute;
+  width: 100%;
+
+  .biplane, .cloud1, .cloud2, .cloud3, .cloud4 {
     position: relative;
+  }
+
+  .biplane {
     top: 25vh;
     display: block;
     margin: auto;
-    z-index: 1;
+    z-index: 2;
+    @include ani(biplanePath, 5s, linear, 2s, infinite, alternate, both);
   }
+
   .cloud1 {
     opacity: 0.5;
-    position: relative;
+    @include ani(cloudBack, 30s, linear, 0s, infinite, normal, both);
   }
+
+  .cloud2 {
+    z-index: 1;
+    top: -200px;
+    left: -300px;
+    opacity: 0.7;
+  }
+
+  .cloud3 {
+    z-index: 3;
+    top: -100px;
+    opacity: 0.8;
+  }
+
+  .cloud4 {
+    width: 300px;
+    height: auto;
+    top: -170px;
+    z-index: 3;
+    opacity: 0.9;
+  }
+
+  .cloud2, .cloud3, .cloud4 {
+    @include ani(cloudFront, 10s, ease-in, 0s, infinite, normal, both);
+  }
+}
+
+//KEYFRAMES
+@keyframes biplanePath {
+  from{transform: translateY(0px);}
+  to {transform: translateY(30px);}
+}
+
+@keyframes cloudBack {
+  from{transform: translateX(-800px);}
+  to {transform: translateX(100vw);}
+}
+
+@keyframes cloudFront {
+  from{transform: translateX(-1300px);}
+  to {transform: translateX(100vw);}
 }
